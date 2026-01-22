@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import Navbar from './components/Navbar';
@@ -9,9 +8,23 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
 
-  // Simple hash-based routing helper for static site compatibility (e.g. GitHub Pages)
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleLocationChange = () => {
+      // 1. Check for query parameter redirect from 404.html (for direct links)
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get('p');
+      
+      if (redirectPath) {
+        // Clean up the URL by removing the query param and setting the hash
+        const cleanPath = redirectPath.replace(/^\//, '');
+        window.history.replaceState(null, '', window.location.pathname + '#' + cleanPath);
+        if (Object.values(Page).includes(cleanPath as Page)) {
+          setCurrentPage(cleanPath as Page);
+          return;
+        }
+      }
+
+      // 2. Standard hash-based routing
       const hash = window.location.hash.replace('#', '');
       if (Object.values(Page).includes(hash as Page)) {
         setCurrentPage(hash as Page);
@@ -20,10 +33,10 @@ const App: React.FC = () => {
       }
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Initial check
+    window.addEventListener('hashchange', handleLocationChange);
+    handleLocationChange(); // Initial check
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleLocationChange);
   }, []);
 
   const navigateTo = (page: Page) => {
@@ -85,26 +98,21 @@ const privacyContent = (
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">3. Cookies and Tracking</h2>
-      <p>We use cookies and similar technologies to enhance your browsing experience and analyze website traffic. You can control cookie preferences through your browser settings. We may use third-party analytics services like Google Analytics to help us understand website usage.</p>
+      <p>We use cookies and similar technologies to enhance your browsing experience and analyze website traffic. You can control cookie preferences through your browser settings.</p>
     </section>
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">4. Data Sharing</h2>
-      <p>Loop Studio does not sell, rent, or trade your personal information to third parties. We only share information with trusted service providers who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential.</p>
+      <p>Loop Studio does not sell, rent, or trade your personal information to third parties. We only share information with trusted service providers who assist us in operating our website.</p>
     </section>
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">5. Security</h2>
-      <p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information on our site.</p>
+      <p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your data on our site.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">6. Your Rights</h2>
-      <p>You have the right to request access to the personal data we hold about you, or to ask that your data be deleted or corrected. Please contact us at the email below to exercise these rights.</p>
-    </section>
-
-    <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">7. Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">6. Contact Us</h2>
       <p>If there are any questions regarding this privacy policy, you may contact us at <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a></p>
     </section>
   </div>
@@ -114,37 +122,27 @@ const termsContent = (
   <div className="space-y-10 text-gray-300 leading-relaxed">
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">1. Acceptance of Terms</h2>
-      <p>By accessing and using the Loop Studio website, you accept and agree to be bound by the terms and provision of this agreement. These terms apply to all visitors, users, and others who access the website.</p>
+      <p>By accessing and using the Loop Studio website, you accept and agree to be bound by the terms and provision of this agreement.</p>
     </section>
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">2. Use of the Website</h2>
-      <p>The content on this website is for your general information and use only. It is subject to change without notice. Unauthorized use of this website may give rise to a claim for damages and/or be a criminal offense.</p>
+      <p>The content on this website is for your general information and use only. It is subject to change without notice.</p>
     </section>
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">3. Intellectual Property</h2>
-      <p>All trademarks, logos, and service marks displayed on the website are the property of Loop Studio or their respective owners. You are not permitted to use these marks without the prior written consent of Loop Studio or the third party that owns the marks.</p>
+      <p>All trademarks, logos, and service marks displayed on the website are the property of Loop Studio or their respective owners.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">4. Disclaimer of Warranties</h2>
-      <p>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services, or information available through this website meet your specific requirements.</p>
+      <h2 className="text-2xl font-bold mb-4 text-white">4. Disclaimer</h2>
+      <p>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">5. Limitation of Liability</h2>
-      <p>In no event shall Loop Studio be liable for any direct, indirect, special, punitive, incidental, or consequential damages, or any damages whatsoever resulting from loss of use, data, or profits, whether in an action of contract, negligence, or other tortious action, arising out of or in connection with the use or performance of information available from this website.</p>
-    </section>
-
-    <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">6. Governing Law</h2>
-      <p>These terms and conditions are governed by and construed in accordance with the laws of Singapore and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
-    </section>
-
-    <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">7. Modifications</h2>
-      <p>Loop Studio reserves the right to revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then-current version of these Terms of Service.</p>
+      <h2 className="text-2xl font-bold mb-4 text-white">5. Governing Law</h2>
+      <p>These terms and conditions are governed by and construed in accordance with the laws of Singapore.</p>
     </section>
   </div>
 );
