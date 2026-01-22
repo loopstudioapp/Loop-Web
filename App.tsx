@@ -10,14 +10,22 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleLocationChange = () => {
-      // 1. Check for query parameter redirect from 404.html (for direct links/refreshes)
       const params = new URLSearchParams(window.location.search);
       const redirectPath = params.get('p');
       
+      // If we've been redirected by 404.html
       if (redirectPath) {
         const cleanPath = redirectPath.replace(/^\//, '');
-        // Clean the URL query params and move the path to the hash
-        const newUrl = window.location.pathname + (cleanPath ? '#' + cleanPath : '');
+        
+        // Construct the new URL with the hash, preserving the current pathname (the repo name)
+        // Ensure we don't end up with multiple slashes
+        const basePath = window.location.pathname.endsWith('/') 
+          ? window.location.pathname 
+          : window.location.pathname + '/';
+          
+        const newUrl = basePath + (cleanPath ? '#' + cleanPath : '');
+        
+        // Update URL to the clean hash version
         window.history.replaceState(null, '', newUrl);
         
         if (Object.values(Page).includes(cleanPath as Page)) {
@@ -26,7 +34,7 @@ const App: React.FC = () => {
         }
       }
 
-      // 2. Standard hash-based routing
+      // Standard hash-based routing
       const hash = window.location.hash.replace('#', '');
       if (Object.values(Page).includes(hash as Page)) {
         setCurrentPage(hash as Page);
@@ -36,7 +44,8 @@ const App: React.FC = () => {
     };
 
     window.addEventListener('hashchange', handleLocationChange);
-    handleLocationChange(); // Initial check
+    // Handle the initial load (including potential redirects)
+    handleLocationChange();
 
     return () => window.removeEventListener('hashchange', handleLocationChange);
   }, []);

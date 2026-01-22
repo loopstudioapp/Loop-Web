@@ -6,19 +6,23 @@
     <script type="text/javascript">
       // GitHub Pages SPA Routing Fix
       // https://github.com/rafgraph/spa-github-pages
-      var l = window.location;
-      var isGitHubPages = l.hostname.indexOf('github.io') !== -1;
-      var pathSegments = l.pathname.split('/');
-      // Detect if we are in a subdirectory (repo name)
-      var pathSegmentsToKeep = (isGitHubPages && pathSegments[1] && l.pathname !== '/') ? 1 : 0;
+      (function() {
+        var l = window.location;
+        var isGitHubPages = l.hostname.indexOf('github.io') !== -1;
+        var pathSegments = l.pathname.split('/');
+        
+        // We want to keep the repository name if we're on github.io
+        // e.g., /Loop-Web/ becomes the base.
+        var pathSegmentsToKeep = (isGitHubPages && pathSegments[1]) ? 1 : 0;
 
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        pathSegments.slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
-        pathSegments.slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+        var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          pathSegments.slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+          pathSegments.slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+
+        l.replace(redirect);
+      })();
     </script>
   </head>
   <body>
