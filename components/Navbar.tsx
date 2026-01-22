@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Page } from '../types';
+import { Page } from '../types.ts';
 
 interface NavbarProps {
   onNavigate: (page: Page) => void;

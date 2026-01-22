@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Page } from './types';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import LegalPage from './components/LegalPage';
-import Footer from './components/Footer';
+import { Page } from './types.ts';
+import Navbar from './components/Navbar.tsx';
+import Home from './components/Home.tsx';
+import LegalPage from './components/LegalPage.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
 
   useEffect(() => {
     const handleLocationChange = () => {
-      // 1. Check for query parameter redirect from 404.html (for direct links)
+      // 1. Check for query parameter redirect from 404.html (for direct links/refreshes)
       const params = new URLSearchParams(window.location.search);
       const redirectPath = params.get('p');
       
       if (redirectPath) {
-        // Clean up the URL by removing the query param and setting the hash
         const cleanPath = redirectPath.replace(/^\//, '');
-        window.history.replaceState(null, '', window.location.pathname + '#' + cleanPath);
+        // Clean the URL query params and move the path to the hash
+        const newUrl = window.location.pathname + (cleanPath ? '#' + cleanPath : '');
+        window.history.replaceState(null, '', newUrl);
+        
         if (Object.values(Page).includes(cleanPath as Page)) {
           setCurrentPage(cleanPath as Page);
           return;

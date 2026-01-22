@@ -4,14 +4,18 @@
     <meta charset="utf-8">
     <title>Loop Studio</title>
     <script type="text/javascript">
-      // GitHub Pages SPA Hero
+      // GitHub Pages SPA Routing Fix
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0;
       var l = window.location;
+      var isGitHubPages = l.hostname.indexOf('github.io') !== -1;
+      var pathSegments = l.pathname.split('/');
+      // Detect if we are in a subdirectory (repo name)
+      var pathSegmentsToKeep = (isGitHubPages && pathSegments[1] && l.pathname !== '/') ? 1 : 0;
+
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
-        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        pathSegments.slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        pathSegments.slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
         (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );

@@ -1,8 +1,7 @@
-
 import React from 'react';
-import Hero from './Hero';
-import Services from './Services';
-import Contact from './Contact';
+import Hero from './Hero.tsx';
+import Services from './Services.tsx';
+import Contact from './Contact.tsx';
 
 interface HomeProps {
   onContactClick: () => void;
