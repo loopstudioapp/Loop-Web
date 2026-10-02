@@ -68,7 +68,7 @@ const App: React.FC = () => {
         {currentPage === Page.PRIVACY && (
           <LegalPage 
             title="Privacy Policy" 
-            lastUpdated="February 20, 2026"
+            lastUpdated="October 2, 2026"
             content={privacyContent}
             onBack={() => navigateTo(Page.HOME)}
           />
@@ -104,6 +104,7 @@ const privacyContent = (
       <ul className="list-disc pl-6 space-y-3 mb-6">
         <li>Name, email address, and message content submitted through contact forms or support requests.</li>
         <li>Photos, images, or other content you submit through our applications for analysis or identification purposes.</li>
+        <li>Text you type into our applications, such as questions or prompts. This may include health-related or other sensitive information if you choose to share it.</li>
         <li>Account or profile information if you create an account within any of our applications.</li>
       </ul>
 
@@ -124,7 +125,7 @@ const privacyContent = (
       <p className="mb-4">We use the information we collect to:</p>
       <ul className="list-disc pl-6 space-y-3">
         <li>Provide, operate, and deliver the core features of our applications and website.</li>
-        <li>Process and analyze content you submit through our applications (such as photos for identification or scanning purposes).</li>
+        <li>Process and analyze content you submit through our applications (such as photos for identification or scanning purposes, or questions you ask).</li>
         <li>Respond to your inquiries and provide customer support.</li>
         <li>Improve, personalize, and develop our Services.</li>
         <li>Monitor usage patterns and analyze trends to enhance user experience.</li>
@@ -140,15 +141,23 @@ const privacyContent = (
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">5. Cookies and Tracking</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">5. AI-Powered Features</h2>
+      <p className="mb-4">Some of our applications use artificial intelligence to answer questions or analyze content. When you use these features, the text, photos, or other content you submit is sent to our servers and to third-party AI providers that process it on our behalf to generate a response. We share only what is needed to provide the feature.</p>
+      <p className="mb-4">We may store your submitted content and the generated results on our servers to provide the feature, keep your history, and improve quality and safety. If you include health-related or other sensitive information, it is used only to provide the feature you requested. We do not sell it or use it for advertising. You can ask us to delete it at any time by contacting us.</p>
+      <p>AI-generated results may be incomplete or inaccurate and are not a substitute for professional advice, including medical, legal, or financial advice.</p>
+    </section>
+
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-white">6. Cookies and Tracking</h2>
       <p>We use cookies and similar technologies on our website to enhance your browsing experience and analyze website traffic. Our applications may use similar tracking technologies for analytics and performance monitoring. You can control cookie preferences through your browser or device settings.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">6. Data Sharing</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">7. Data Sharing</h2>
       <p className="mb-4">Loop Studio does not sell, rent, or trade your personal information to third parties. We may share information only in the following circumstances:</p>
       <ul className="list-disc pl-6 space-y-3">
         <li>With trusted service providers who assist us in operating our Services, subject to confidentiality obligations.</li>
+        <li>With third-party AI and cloud processing providers, only to generate results for features you use (see "AI-Powered Features").</li>
         <li>When required by law, regulation, or legal process, or to protect the rights, property, or safety of Loop Studio, our users, or the public.</li>
         <li>In connection with a merger, acquisition, or sale of assets, in which case your information may be transferred as part of that transaction.</li>
         <li>With your explicit consent.</li>
@@ -156,32 +165,32 @@ const privacyContent = (
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">7. Data Retention</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">8. Data Retention</h2>
       <p>We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. When your data is no longer needed, we delete or anonymize it.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">8. Security</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">9. Security</h2>
       <p>We implement commercially reasonable security measures to protect your personal information. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">9. Children's Privacy</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">10. Children's Privacy</h2>
       <p>Our Services are not directed at children under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take steps to delete such information.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">10. Your Rights</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">11. Your Rights</h2>
       <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the processing of your personal information. To exercise any of these rights, please contact us using the details below.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">11. Changes to This Policy</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">12. Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. Changes will be posted within our Services with an updated "Last Updated" date. Your continued use of our Services after any changes constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">12. Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">13. Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, you may contact us at <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a></p>
     </section>
   </div>
