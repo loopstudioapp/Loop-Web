@@ -14,7 +14,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       >
         Loop Studio
       </div>
-      <ul className="flex gap-8 text-sm font-medium">
+      <ul className="flex gap-4 sm:gap-8 text-sm font-medium">
+        <li>
+          <button 
+            onClick={() => onNavigate(Page.APPS)}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            Apps
+          </button>
+        </li>
         <li>
           <button 
             onClick={() => onNavigate(Page.PRIVACY)}
