@@ -1,6 +1,7 @@
 
 export enum Page {
   HOME = 'home',
+  APPS = 'apps',
   PRIVACY = 'privacy',
   TERMS = 'terms'
 }

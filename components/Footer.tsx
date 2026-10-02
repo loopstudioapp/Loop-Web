@@ -10,6 +10,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     <footer className="py-16 px-6 md:px-12 border-t border-white/5 text-center bg-black">
       <div className="flex justify-center gap-8 mb-8">
         <button 
+          onClick={() => onNavigate(Page.APPS)}
+          className="text-gray-500 hover:text-white transition-colors text-sm font-medium"
+        >
+          Apps
+        </button>
+        <button 
           onClick={() => onNavigate(Page.PRIVACY)}
           className="text-gray-500 hover:text-white transition-colors text-sm font-medium"
         >

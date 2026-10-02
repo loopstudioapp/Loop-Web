@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.tsx';
 import Home from './components/Home.tsx';
 import LegalPage from './components/LegalPage.tsx';
 import Footer from './components/Footer.tsx';
+import AppsPage from './components/AppsPage.tsx';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
@@ -65,6 +66,8 @@ const App: React.FC = () => {
            contact?.scrollIntoView({ behavior: 'smooth' });
         }} />}
         
+        {currentPage === Page.APPS && <AppsPage onBack={() => navigateTo(Page.HOME)} />}
+
         {currentPage === Page.PRIVACY && (
           <LegalPage 
             title="Privacy Policy" 
@@ -93,7 +96,7 @@ const privacyContent = (
   <div className="space-y-10 text-gray-300 leading-relaxed">
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">1. Introduction</h2>
-      <p>Loop Studio ("we," "us," or "our") develops and publishes mobile applications and operates the website at loopstudio.tech (collectively, the "Services"). This Privacy Policy explains how we collect, use, and protect your information when you use any of our applications or visit our website.</p>
+      <p>Quan Quach, trading as Loop Studio ("Loop Studio," "we," "us," or "our"), develops and publishes mobile applications and operates the website at loopstudio.tech (collectively, the "Services"). This Privacy Policy explains how we collect, use, and protect your information when you use any of our applications or visit our website.</p>
     </section>
 
     <section>
@@ -171,7 +174,9 @@ const privacyContent = (
 
     <section>
       <h2 className="text-2xl font-bold mb-4 text-white">9. Data Retention</h2>
-      <p>We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. When your data is no longer needed, we delete or anonymize it.</p>
+      <p className="mb-4">We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. When your data is no longer needed, we delete or anonymize it.</p>
+      <h3 className="text-lg font-semibold mb-3 text-white">Deleting Your Data:</h3>
+      <p>You can delete the data stored on your device at any time by deleting the app. To delete data stored on our servers for any of our applications, email <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a> with the name of the app. We will delete it within 30 days, unless the law requires us to keep it. Deleting an app does not cancel a subscription; you can cancel subscriptions in your Apple ID settings.</p>
     </section>
 
     <section>
