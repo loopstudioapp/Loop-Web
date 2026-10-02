@@ -148,12 +148,17 @@ const privacyContent = (
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">6. Cookies and Tracking</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">6. Third-Party Content and Embedded Players</h2>
+      <p>Some of our applications show videos or other content from third-party platforms, such as YouTube, using those platforms' embedded players or services. When you view this content, the platform may collect information about your device and viewing activity under its own privacy policy, which we do not control. Where our applications use YouTube API Services, your use of that content is also subject to the <a href="https://www.youtube.com/t/terms" className="text-white underline underline-offset-4">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy" className="text-white underline underline-offset-4">Google Privacy Policy</a>.</p>
+    </section>
+
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-white">7. Cookies and Tracking</h2>
       <p>We use cookies and similar technologies on our website to enhance your browsing experience and analyze website traffic. Our applications may use similar tracking technologies for analytics and performance monitoring. You can control cookie preferences through your browser or device settings.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">7. Data Sharing</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">8. Data Sharing</h2>
       <p className="mb-4">Loop Studio does not sell, rent, or trade your personal information to third parties. We may share information only in the following circumstances:</p>
       <ul className="list-disc pl-6 space-y-3">
         <li>With trusted service providers who assist us in operating our Services, subject to confidentiality obligations.</li>
@@ -165,32 +170,32 @@ const privacyContent = (
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">8. Data Retention</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">9. Data Retention</h2>
       <p>We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. When your data is no longer needed, we delete or anonymize it.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">9. Security</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">10. Security</h2>
       <p>We implement commercially reasonable security measures to protect your personal information. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">10. Children's Privacy</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">11. Children's Privacy</h2>
       <p>Our Services are not directed at children under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take steps to delete such information.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">11. Your Rights</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">12. Your Rights</h2>
       <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the processing of your personal information. To exercise any of these rights, please contact us using the details below.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">12. Changes to This Policy</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">13. Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. Changes will be posted within our Services with an updated "Last Updated" date. Your continued use of our Services after any changes constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
-      <h2 className="text-2xl font-bold mb-4 text-white">13. Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white">14. Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, you may contact us at <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a></p>
     </section>
   </div>
