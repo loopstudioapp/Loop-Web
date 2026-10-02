@@ -48,8 +48,8 @@ const AppsPage: React.FC<AppsPageProps> = ({ onBack }) => {
             >
               <img src={app.icon} alt="" width={64} height={64} className="w-16 h-16 rounded-2xl shrink-0" />
               <div className="min-w-0 flex-1">
-                <p className="text-white font-semibold truncate">{app.name}</p>
-                <p className="text-gray-400 text-sm truncate">{app.subtitle}</p>
+                <p className="text-white font-semibold">{app.name}</p>
+                <p className="text-gray-400 text-sm">{app.subtitle}</p>
                 <p className="text-gray-600 text-xs mt-1">{app.category}</p>
               </div>
               <span className="text-gray-500 text-sm shrink-0 hidden sm:inline">App Store →</span>
