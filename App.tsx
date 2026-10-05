@@ -109,6 +109,7 @@ const privacyContent = (
         <li>Photos, images, or other content you submit through our applications for analysis or identification purposes.</li>
         <li>Text you type into our applications, such as questions or prompts. This may include health-related or other sensitive information if you choose to share it.</li>
         <li>Account or profile information if you create an account within any of our applications.</li>
+        <li>Onboarding answers and plan: when you set up some of our apps, we ask optional questions such as your role, specialty, goals, and what frustrates you about other tools, and we record which subscription plan you choose. These answers are linked to an anonymous app ID (not your name or email) and are used only to understand who uses our apps and to improve them. They are not used for advertising or tracking and are not sold.</li>
       </ul>
 
       <h3 className="text-lg font-semibold mb-3 text-white">Information Collected Automatically:</h3>
