@@ -71,7 +71,7 @@ const App: React.FC = () => {
         {currentPage === Page.PRIVACY && (
           <LegalPage 
             title="Privacy Policy" 
-            lastUpdated="October 2, 2026"
+            lastUpdated="October 6, 2026"
             content={privacyContent}
             onBack={() => navigateTo(Page.HOME)}
           />
