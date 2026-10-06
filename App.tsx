@@ -177,7 +177,7 @@ const privacyContent = (
       <h2 className="text-2xl font-bold mb-4 text-white">9. Data Retention</h2>
       <p className="mb-4">We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. When your data is no longer needed, we delete or anonymize it.</p>
       <h3 className="text-lg font-semibold mb-3 text-white">Deleting Your Data:</h3>
-      <p>You can delete the data stored on your device at any time by deleting the app. To delete data stored on our servers for any of our applications, email <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a> with the name of the app. We will delete it within 30 days, unless the law requires us to keep it. Deleting an app does not cancel a subscription; you can cancel subscriptions in your Apple ID settings.</p>
+      <p>You can delete the data stored on your device at any time by deleting the app. To delete data stored on our servers for any of our applications, email <a href="mailto:support@loopstudio.tech" className="text-white underline underline-offset-4">support@loopstudio.tech</a> with the name of the app. We will delete it within 30 days, unless the law requires us to keep it. Deleting an app does not cancel a subscription; you can manage or cancel a subscription in your App Store account settings (Apple) or in Google Play › Payments &amp; subscriptions (Android).</p>
     </section>
 
     <section>
