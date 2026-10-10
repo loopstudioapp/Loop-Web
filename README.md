@@ -18,3 +18,11 @@ View your app in AI Studio: https://ai.studio/apps/drive/1mrdigvzNWv4J_sbaV1gejz
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Hosting
+
+www.loopstudio.tech runs on Cloudflare (Worker `loopstudio-web`, static assets from `dist/`); `loopstudio.tech` redirects to www. Publish with:
+
+```bash
+npm run deploy
+```

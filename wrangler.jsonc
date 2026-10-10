@@ -1,0 +1,14 @@
+{
+  // www.loopstudio.tech (and loopstudio.tech, which redirects to www): the static Vite build in dist/.
+  // Deploy: npm run deploy
+  "name": "loopstudio-web",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "workers_dev": false,
+  "preview_urls": false
+}
