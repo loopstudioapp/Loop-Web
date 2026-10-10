@@ -9,6 +9,10 @@
     "binding": "ASSETS",
     "run_worker_first": true
   },
+  "routes": [
+    { "pattern": "www.loopstudio.tech", "custom_domain": true },
+    { "pattern": "loopstudio.tech", "custom_domain": true }
+  ],
   "workers_dev": false,
   "preview_urls": false
 }
